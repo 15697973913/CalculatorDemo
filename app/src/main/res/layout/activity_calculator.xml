@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="calculator"
             type="com.example.jetpackdemo.viewmodel.CalculatorViewModel" />
-
     </data>
 
-    <GridLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".CalculatorActivity">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <GridLayout
+        <!--输入的文本框-->
+        <EditText
+            android:id="@+id/main_et_result"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top">
-
-            <!--输入的文本框-->
-            <EditText
-                android:id="@+id/main_et_result"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:hint="请输入数字"
-                android:text="@{String.valueOf(calculator.getOneNumber())}" />
-        </GridLayout>
+            android:layout_height="100dp"
+            android:hint="请输入数字"
+            android:text="@{String.valueOf(calculator.getOneNumber())}" />
 
         <GridLayout
             android:layout_width="match_parent"
@@ -164,6 +156,6 @@
 
             <Space />
         </GridLayout>
+    </LinearLayout>
 
-    </GridLayout>
 </layout>

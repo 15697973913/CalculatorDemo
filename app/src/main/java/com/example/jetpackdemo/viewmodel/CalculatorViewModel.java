@@ -28,12 +28,13 @@ public class CalculatorViewModel extends ViewModel {
         }
     }
 
-    public double getOneNumber() {
+    public MutableLiveData<Double> getOneNumber() {
         if (oneNumber == null) {
             oneNumber = new MutableLiveData<>(0.0);
         }
-        return oneNumber.getValue();
+        return oneNumber;
     }
+
 
     /**
      * 求出结果
@@ -67,6 +68,8 @@ public class CalculatorViewModel extends ViewModel {
                 if (oneNumber.getValue() != 0 & towNumber.getValue() != 0) {
                     outResults(this.operator);
                 }
+                break;
+            default:
                 break;
         }
     }
